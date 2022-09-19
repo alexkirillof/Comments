@@ -31,11 +31,11 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Name:</label>
-                    <input type="text" class="form-control" v-model="newComment.name" v-on:keyup="keymonitor">
+                    <input type="text" class="form-control" v-model="newComment.name" v-on:keyup="keymonitor" required>
                 </div>
                 <div class="form-group">
                     <label>Comment:</label>
-                    <input type="text" class="form-control" v-model="newComment.comment" v-on:keyup="keymonitor">
+                    <input type="text" class="form-control" v-model="newComment.comment" v-on:keyup="keymonitor" required>
                 </div>
             <button class="btn btn-primary" @click="insertComment"><span class="glyphicon glyphicon-floppy-disk"></span> Add</button>   
     </div> 
