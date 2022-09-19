@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#comments',
     data: {
         comments: [],
-        newComment: { name: '', comment: '' },
+        newComment: { id: '', name: '', comment: '' },
     },
     mounted: function() {
         this.fetchComments();
@@ -24,7 +24,6 @@ var app = new Vue({
             var commentForm = app.toFormData(app.newComment)
             axios.post('connect.php?action=add', commentForm)
                 .then(function(response) {
-                    console.log(response);
                     app.newComment = { name: '', comment: '', date: '' };
                     app.fetchComments();
                 })
@@ -36,5 +35,13 @@ var app = new Vue({
             }
             return form_data;
         },
+        deleteComment: function(id) {
+            axios.post('connect.php?action=delete', { id: id })
+                .then(function(response) {
+                    console.log(response);
+                    app.newComment = ''
+                    app.fetchComments();
+                })
+        }
     }
 })

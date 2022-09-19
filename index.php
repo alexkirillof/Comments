@@ -23,7 +23,7 @@
                                 <td>{{ comment.name }}</td>
                                 <td>{{ comment.comment }}</td>
                                 <td>{{ comment.date }}</td>
-                                <td><button>x</button></td>
+                                <td><button @click="deleteComment(comment.id)">x</button></td>
                             </tr>
                         </tbody>
                     </table>

@@ -2,6 +2,8 @@
 
 
 $conn = new mysqli("127.0.0.1", "root", "", "Comments");
+
+$data = json_decode(file_get_contents("php://input"));
  
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -49,6 +51,14 @@ if($action=='add'){
         $out['message']='Error in Adding Occured';
     }
     }
+}
+
+if($action=='delete'){
+    $id = $data->id;
+    $sql="DELETE FROM comments WHERE id=".$id;
+    $query=$conn->query($sql);
+  echo "Delete successfully";
+  exit;
 }
 $conn->close();
  
