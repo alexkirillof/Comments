@@ -24,7 +24,6 @@ var app = new Vue({
             var commentForm = app.toFormData(app.newComment)
             axios.post('connect.php?action=add', commentForm)
                 .then(function(response) {
-                    app.newComment = { name: '', comment: '', date: '' };
                     app.fetchComments();
                 })
         },
