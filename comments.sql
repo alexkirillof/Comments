@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 19 2022 г., 20:06
+-- Время создания: Сен 20 2022 г., 22:14
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.4.30
 
@@ -31,7 +31,7 @@ CREATE TABLE `comments` (
   `id` int NOT NULL,
   `name` varchar(40) COLLATE utf8mb4_general_ci NOT NULL,
   `comment` text COLLATE utf8mb4_general_ci NOT NULL,
-  `date` varchar(30) COLLATE utf8mb4_general_ci NOT NULL
+  `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -52,7 +52,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
