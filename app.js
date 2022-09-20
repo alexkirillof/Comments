@@ -9,11 +9,6 @@ var app = new Vue({
     },
 
     methods: {
-        keymonitor: function(event) {
-            if (event.key == "Enter") {
-                app.insertComment();
-            }
-        },
         fetchComments: function() {
             axios.post('connect.php')
                 .then(function(response) {
@@ -37,7 +32,6 @@ var app = new Vue({
         deleteComment: function(id) {
             axios.post('connect.php?action=delete', { id: id })
                 .then(function(response) {
-                    console.log(response);
                     app.newComment = ''
                     app.fetchComments();
                 })
